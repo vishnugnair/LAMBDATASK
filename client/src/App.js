@@ -12,7 +12,7 @@ function App() {
       const parsedData = JSON.parse(jsonData);
 
       // If JSON is valid, proceed with storing data
-      const res = await fetch("http://localhost:5000/api/storeData", {
+      const res = await fetch("https://lambdatask.onrender.com/api/storeData", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(parsedData),
@@ -32,7 +32,7 @@ function App() {
 
   const handleGetData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/getData");
+      const res = await fetch("https://lambdatask.onrender.com/api/getData");
       const data = await res.json();
       setRetrievedData(data);
       setError("");
